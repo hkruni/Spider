@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//weibo/weibo/cookies.py=utf-8
+encoding//weibo/weibo/items.py=utf-8
+encoding//weibo/weibo/middleware.py=utf-8
+encoding//weibo/weibo/pipelines.py=utf-8
+encoding//weibo/weibo/settings.py=utf-8
+encoding//weibo/weibo/spiders/weibo_spider.py=utf-8
+encoding//weibo/weibo/user_agents.py=utf-8

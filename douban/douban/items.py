@@ -5,10 +5,13 @@
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+
+from scrapy.item import Item, Field
 
 
-class DoubanItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class DoubanBookItem(scrapy.Item):
+    name = scrapy.Field()            # 书名
+    price = scrapy.Field()           # 价格
+    edition_year = scrapy.Field()    # 出版年份
+    publisher = scrapy.Field()       # 出版社
+    ratings = scrapy.Field()         # 评分

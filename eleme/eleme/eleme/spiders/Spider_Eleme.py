@@ -38,7 +38,6 @@ class Spider_Eleme(Spider):
             item['url'] = 'https://www.ele.me/shop/' + str(j['id'])
             imageCode = j['image_path']
             item['imageUrl'] = 'http://fuss10.elemecdn.com/' + imageCode[0] + '/' + imageCode[1:3] + '/' +imageCode[3:] + '.jpeg?imageMogr2/thumbnail/70x70/format/webp/quality/85'
-            
             yield item
             
         

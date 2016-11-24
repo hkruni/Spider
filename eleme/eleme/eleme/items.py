@@ -15,5 +15,8 @@ class ElemeItem(scrapy.Item):
     rating = Field()
     url = Field()
     imageUrl = Field()
+    #用于图片下载使用
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
     pass
 

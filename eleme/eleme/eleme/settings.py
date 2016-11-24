@@ -17,6 +17,7 @@ NEWSPIDER_MODULE = 'eleme.spiders'
 
 
 ITEM_PIPELINES = {
+    'eleme.pipelines.ElemeImagesPipe' : 1,
     'eleme.pipelines.InsertItemPipe' : 5
 }
 
@@ -26,6 +27,10 @@ MYSQL_DBNAME = 'spider_db'
 MYSQL_USER = 'root'
 MYSQL_PASSWD = 'root'
 MYSQL_PORT = 3308
+
+
+IMAGES_STORE = r'/xgt/eleme/' #图片存放的路径
+IMAGES_EXPIRES = 10   #10天内抓取过的图片不再抓取
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'eleme (+http://www.yourdomain.com)'
 

@@ -11,6 +11,7 @@ import scrapy
 class FootballItem(scrapy.Item):
     # define the fields for your item here like:
     date = scrapy.Field()
+    bianhao = scrapy.Field()
     liansai = scrapy.Field()
     zhu = scrapy.Field()
     ke = scrapy.Field()

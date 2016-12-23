@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//common/items/base.py=utf-8
+encoding//common/items/house.py=utf-8
+encoding//common/middlewares/useragent.py=utf-8
+encoding//common/pipelines/removeduplicate.py=utf-8
+encoding//house/house/items.py=utf-8
+encoding//house/house/pipelines.py=utf-8
+encoding//house/house/settings.py=utf-8
+encoding//house/house/spiders/sinahouse.py=utf-8
+encoding//house/house/utils.py=utf-8
+encoding//proxy/proxy/settings.py=utf-8
+encoding//proxy/proxy/spiders/kuaidaili.py=utf-8

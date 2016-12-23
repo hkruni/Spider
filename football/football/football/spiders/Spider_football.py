@@ -17,14 +17,14 @@ class Spider_football(Spider):
     name = 'football'
     
     allowed_domain = ['info.sporttery.cn']
-    url = 'http://info.sporttery.cn/football/match_result.php?search_league=0&start_date=2013-06-04&end_date=2013-09-30&dan=&page='
-    #url = 'http://info.sporttery.cn/football/match_result.php?search_league=0&page='
+    #url = 'http://info.sporttery.cn/football/match_result.php?search_league=0&start_date=2013-06-04&end_date=2013-09-30&dan=&page='
+    url = 'http://info.sporttery.cn/football/match_result.php?search_league=0&page='
     start_urls = [
                   ]
     
     rootUrl = 'http://info.sporttery.cn/football/'
     
-    for i in range(1,200):
+    for i in range(1,10):
         url1 = url + str(i)
         start_urls.append(url1)
     

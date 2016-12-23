@@ -20,10 +20,13 @@ class FootballPipeline(object):
         self.sheet.write(self.i,1,u'赛事编号')
         self.sheet.write(self.i,2,u'联赛')
         self.sheet.write(self.i,3,u'比分')
-        self.sheet.write(self.i,4,u'让球')
-        self.sheet.write(self.i,5,u'胜')
-        self.sheet.write(self.i,6,u'平')
-        self.sheet.write(self.i,7,u'负')
+        self.sheet.write(self.i,4,u'')
+        self.sheet.write(self.i,5,u'')
+        self.sheet.write(self.i,6,u'')
+        self.sheet.write(self.i,7,u'让球')
+        self.sheet.write(self.i,8,u'胜')
+        self.sheet.write(self.i,9,u'平')
+        self.sheet.write(self.i,10,u'负')
         
         self.style = xlwt.XFStyle()
         
@@ -47,51 +50,38 @@ class FootballPipeline(object):
         bisai_result = item['zhu'] + ' (' + item['bifen_half'] + ') ' + item['bifen_all'] + item['ke']
         self.i += 1
         
-        self.sheet.write(self.i,0,'')
-        self.sheet.write(self.i,1,item['bianhao'])
-        self.sheet.write(self.i,2,'')
-        self.sheet.write(self.i,3,'')
-        self.sheet.write(self.i,4,'')
-        if item['last'] == '胜':
-            self.sheet.write(self.i,5,item['sheng2'],self.style)
-        else:
-            self.sheet.write(self.i,5,item['sheng2'])
-            
-        if item['last'] == '平':
-            self.sheet.write(self.i,6,item['ping2'],self.style)
-        else:
-            self.sheet.write(self.i,6,item['ping2'])
-        if item['last'] == '负':
-            self.sheet.write(self.i,7,item['fu2'],self.style)
-        else:
-            self.sheet.write(self.i,7,item['fu2'])
-        
-        
-        self.i += 1
-
         self.sheet.write(self.i,0,item['date'])
         self.sheet.write(self.i,1,item['bianhao'])
         self.sheet.write(self.i,2,item['liansai'])
         self.sheet.write(self.i,3,bisai_result)
-        self.sheet.write(self.i,4,item['rang'])
-        if item['rang_last'] == '胜':
-            self.sheet.write(self.i,5,item['sheng1'],self.style)
+        if item['last'] == '胜':
+            self.sheet.write(self.i,4,item['sheng2'],self.style)
         else:
-            self.sheet.write(self.i,5,item['sheng1'])
+            self.sheet.write(self.i,4,item['sheng2'])
+            
+        if item['last'] == '平':
+            self.sheet.write(self.i,5,item['ping2'],self.style)
+        else:
+            self.sheet.write(self.i,5,item['ping2'])
+        if item['last'] == '负':
+            self.sheet.write(self.i,6,item['fu2'],self.style)
+        else:
+            self.sheet.write(self.i,6,item['fu2'])
+        
+    
+        self.sheet.write(self.i,7,item['rang'])
+        if item['rang_last'] == '胜':
+            self.sheet.write(self.i,8,item['sheng1'],self.style)
+        else:
+            self.sheet.write(self.i,8,item['sheng1'])
             
         if item['rang_last'] == '平':
-            self.sheet.write(self.i,6,item['ping1'],self.style)
+            self.sheet.write(self.i,9,item['ping1'],self.style)
         else:
-            self.sheet.write(self.i,6,item['ping1'])
+            self.sheet.write(self.i,9,item['ping1'])
         if item['rang_last'] == '负':
-            self.sheet.write(self.i,7,item['fu1'],self.style)
+            self.sheet.write(self.i,10,item['fu1'],self.style)
         else:
-            self.sheet.write(self.i,7,item['fu1'])
-#         bisai_result = item['zhu'] + ' (' + item['bifen_half'] + ') ' + item['bifen_all'] + item['ke']
-#         data = [
-#                 (item['date'],item['liansai'],bisai_result,item['rang'],item['sheng1'],item['ping1'],item['fu1']),
-#                 ('','','','',item['sheng2'],item['ping2'],item['fu2'])
-#         ]
-#         self.writer.writerows(data)
+            self.sheet.write(self.i,10,item['fu1'])
         
         return item
